@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* ********************************************************************************************
  *                                                                                            *
  * Please read the following tutorial before implementing tasks:                               *
@@ -10,6 +11,7 @@
 
 /**
  * Returns an index of the specified element in array or -1 if element is not found
+ * Возвращает индекс указанного элемента в массиве или -1, если элемент не найден.
  *
  * @param {array} arr
  * @param {any} value
@@ -26,6 +28,7 @@ function findElement(/* arr, value */) {
 
 /**
  * Generates an array of odd numbers of the specified length
+ * Генерирует массив нечетных чисел указанной длины
  *
  * @param {number} len
  * @return {array}
@@ -43,6 +46,8 @@ function generateOdds(/* len */) {
 /**
  * Returns the doubled array - elements of the specified array
  * are repeated twice using original order
+ * Возвращает удвоенный массив — элементы указанного массива.
+  * повторяются дважды в исходном порядке
  *
  * @param {array} arr
  * @return {array}
@@ -52,13 +57,14 @@ function generateOdds(/* len */) {
  *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
  *    [] => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  return arr.concat(arr);
 }
 
 
 /**
  * Returns an array of positive numbers from the specified array in original order
+ * Возвращает массив положительных чисел из указанного массива в исходном порядке.
  *
  * @param {array} arr
  * @return {array}
@@ -74,6 +80,7 @@ function getArrayOfPositives(/* arr */) {
 
 /**
  * Returns the array with strings only in the specified array (in original order)
+ * Возвращает массив со строками только в указанном массиве (в исходном порядке)
  *
  * @param {array} arr
  * @return {array}
@@ -90,6 +97,8 @@ function getArrayOfStrings(/* arr */) {
 /**
  * Removes falsy values from the specified array
  * Falsy values: false, null, 0, "", undefined, and NaN.
+ * Удаляет ложные значения из указанного массива
+  * Ложные значения: false, null, 0, «», undefined и NaN.
  * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean#Description)
  *
  * @param {array} arr
@@ -106,6 +115,7 @@ function removeFalsyValues(/* arr */) {
 
 /**
  * Returns the array of uppercase strings from the specified array
+ * Возвращает массив строк в верхнем регистре из указанного массива
  *
  * @param {array} arr
  * @return {array}

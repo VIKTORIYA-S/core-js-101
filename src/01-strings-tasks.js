@@ -254,6 +254,8 @@ function encodeToRot13(/* str */) {
 
 /**
  * Returns true if the value is string; otherwise false.
+ * Возвращает true, если значение является строкой; в противном случае ложь.
+V
  * @param {string} value
  * @return {boolean}
  *
@@ -265,15 +267,21 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  if (typeof value === 'string' || value instanceof String) {
+    return true;
+  } else if (typeof value !== 'string') {
+    return false;
+  }
 }
 
 
 /**
  * Returns playid card id.
+ * Возвращает идентификатор карты playid.
  *
  * Playing cards inittial deck inclides the cards in the following order:
+ * Начальная колода игральных карт включает карты в следующем порядке:
  *
  *  'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
  *  'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
@@ -282,6 +290,7 @@ function isString(/* value */) {
  *
  * (see https://en.wikipedia.org/wiki/Standard_52-card_deck)
  * Function returns the zero-based index of specified card in the initial deck above.
+ * Функция возвращает индекс указанной карты в исходной колоде, начинающийся с нуля.
  *
  * @param {string} value
  * @return {number}
@@ -294,8 +303,12 @@ function isString(/* value */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const arr = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+  'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+  'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+  'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
+return arr.findIndex((item) => item === value);
 }
 
 

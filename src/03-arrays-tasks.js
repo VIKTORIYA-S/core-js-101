@@ -38,8 +38,8 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  let arr = [];
+function generateOdds(len) {
+  const array = new Array(len);
   return 
 }
 
@@ -75,8 +75,8 @@ function doubleArray(arr) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => []
  */
-function getArrayOfPositives(/* arr */) {
-  throw new Error('Not implemented');
+function getArrayOfPositives(arr) {
+  return arr.filter((char) => char > 0);
 }
 
 /**
@@ -91,10 +91,9 @@ function getArrayOfPositives(/* arr */) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
-function getArrayOfStrings(/* arr */) {
-  throw new Error('Not implemented');
+function getArrayOfStrings(arr) {
+  return arr.filter((char) => typeof char === 'string');
 }
-
 /**
  * Removes falsy values from the specified array
  * Falsy values: false, null, 0, "", undefined, and NaN.
@@ -110,8 +109,12 @@ function getArrayOfStrings(/* arr */) {
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
+function removeFalsyValues(arr) {
+  return arr.filter((e) => !!(e));
+
+//   let obj = [{ id: 1, name: 'abc' }, { id: 2, name: 'abc' }, { id: 3, name: 'abc' }, { id: 4, name: 'abc' } ];
+// let idArr = [1, 2]
+// let data = obj.filter(item => !idArr.includes(item.id));
 }
 
 /**
@@ -126,13 +129,15 @@ function removeFalsyValues(/* arr */) {
  *    => [ 'PERMANENT-INTERNSHIP', 'GLUTINOUS-SHRIEK', 'MULTIPLICATIVE-ELEVATION' ],
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
-function getUpperCaseStrings(/* arr */) {
-  throw new Error('Not implemented');
+function getUpperCaseStrings(arr) {
+  return arr.map(e => e.toUpperCase());
 }
+
 
 
 /**
  * Returns the array of string lengths from the specified string array.
+ * Возвращает массив длин строк из указанного массива строк.
  *
  * @param {array} arr
  * @return {array}
@@ -141,12 +146,13 @@ function getUpperCaseStrings(/* arr */) {
  *    [ '', 'a', 'bc', 'def', 'ghij' ]  => [ 0, 1, 2, 3, 4 ]
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
+function getStringsLength(arr) {
+  return arr.map((e) => e.lenght);
 }
 
 /**
  * Inserts the item into specified array at specified index
+ * --Вставляет элемент в указанный массив по указанному индексу.
  *
  * @param {array} arr
  * @param {any} item
@@ -156,12 +162,13 @@ function getStringsLength(/* arr */) {
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
  *    [ 1, 'b', 'c'], 'x', 0  => [ 'x', 1, 'b', 'c' ]
  */
-function insertItem(/* arr, item, index */) {
-  throw new Error('Not implemented');
+function insertItem(arr, item, index) {
+   return arr.push(item[index]);
 }
 
 /**
  * Returns the n first items of the specified array
+ * Возвращает n первых элементов указанного массива
  *
  * @param {array} arr
  * @param {number} n
@@ -170,13 +177,15 @@ function insertItem(/* arr, item, index */) {
  *    [ 1, 3, 4, 5 ], 2 => [ 1, 3 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
-function getHead(/* arr, n */) {
-  throw new Error('Not implemented');
+function getHead(arr, n) {
+  arr.splice(n);
+  return arr;
 }
 
 
 /**
  * Returns the n last items of the specified array
+ * Возвращает n последних элементов указанного массива
  *
  * @param {array} arr
  * @param {number} n
@@ -185,13 +194,14 @@ function getHead(/* arr, n */) {
  *    [ 1, 3, 4, 5 ], 2  => [ 4, 5 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
-function getTail(/* arr, n */) {
-  throw new Error('Not implemented');
+function getTail(arr, n) {
+  
 }
 
 
 /**
  * Returns CSV representation of two-dimensional numeric array.
+ * Возвращает CSV-представление двумерного числового массива.
  * https://en.wikipedia.org/wiki/Comma-separated_values
  *
  * @param {array} arr
@@ -216,6 +226,7 @@ function toCsvText(/* arr */) {
 
 /**
  * Transforms the numeric array into the according array of squares:
+ * Преобразует числовой массив в соответствующий массив квадратов:
  *   f(x) = x * x
  *
  * @param {array} arr
@@ -225,13 +236,17 @@ function toCsvText(/* arr */) {
  *   [ 0, 1, 2, 3, 4, 5 ] => [ 0, 1, 4, 9, 16, 25 ]
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
-function toArrayOfSquares(/* arr */) {
-  throw new Error('Not implemented');
+function toArrayOfSquares(arr) {
+  arr.map((item) =>  +item * +item);
+  return arr;
 }
+
+
 
 
 /**
  * Transforms the numeric array to the according moving sum array:
+ * Преобразует числовой массив в соответствующий массив скользящей суммы:
  *     f[n] = x[0] + x[1] + x[2] +...+ x[n]
  *  or f[n] = f[n-1] + x[n]
  *
@@ -244,12 +259,22 @@ function toArrayOfSquares(/* arr */) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  throw new Error('Not implemented');
+function getMovingSum(arr) {
+  let result = [];
+  if (!arr.length) return result;
+
+  let totalSum = arr.reduce(function(sum, item) {
+    result.push(sum);
+    return sum + item;
+  });
+  result.push(totalSum);
+
+  return result;
 }
 
 /**
  * Returns every second item from the specified array:
+ * Возвращает каждый второй элемент из указанного массива:
  *
  * @param {array} arr
  * @return {array}
@@ -259,14 +284,16 @@ function getMovingSum(/* arr */) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(/* arr */) {
-  throw new Error('Not implemented');
+function getSecondItems(arr) {
+  return arr.filter((item, index) => index % 2);
 }
 
 
 /**
  * Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, three third items etc.
+ * --Распространяет каждый элемент последовательно по времени его положения.
+  * Возвращает массив, состоящий из: одного первого элемента, двух вторых элементов, трех третьих элементов и т. д.
  *
  * @param {array} arr
  * @return {array}
@@ -278,14 +305,15 @@ function getSecondItems(/* arr */) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  return arr.splice((index, 0, (item + (item * index))));
 }
 
 
 /**
  * Returns the 3 largest numbers from the specified array
- *
+ *Возвращает 3 самых больших числа из указанного массива
+
  * @param {array} arr
  * @return {array}
  *
@@ -296,13 +324,18 @@ function propagateItemsByPositionIndex(/* arr */) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(/* arr */) {
-  throw new Error('Not implemented');
+ function get3TopItems(arr) {
+  let result = arr.sort((a, b) => b - a);
+  if (arr.length > 3) {
+    result = result.slice(0, 3);
+  }
+  return result;
 }
 
 
 /**
  * Returns the number of positive numbers from specified array
+ * Возвращает количество положительных чисел из указанного массива
  *
  * @param {array} arr
  * @return {number}
@@ -314,12 +347,14 @@ function get3TopItems(/* arr */) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getPositivesCount(arr) {
+  let newArr = arr.filter((item) => typeof item == 'number' && item > 0);
+  return newArr.length;
 }
 
 /**
  * Sorts digit names
+ * Сортирует имена цифр
  *
  * @param {array} arr
  * @return {array}
@@ -337,6 +372,7 @@ function sortDigitNamesByNumericOrder(/* arr */) {
 
 /**
  * Returns the sum of all items in the specified array of numbers
+ * Возвращает сумму всех элементов в указанном массиве чисел
  *
  * @param {array} arr
  * @return {number}
@@ -347,12 +383,16 @@ function sortDigitNamesByNumericOrder(/* arr */) {
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
-function getItemsSum(/* arr */) {
-  throw new Error('Not implemented');
+function getItemsSum(arr) {
+  let res = arr.reduce(function(sum, elem) {
+    return sum + elem;
+  }, 0);
+  return res;
 }
 
 /**
  * Returns the number of all falsy value in the specified array
+ * Возвращает количество всех ложных значений в указанном массиве.
  *
  * @param {array} arr
  * @return {number}
@@ -369,6 +409,7 @@ function getFalsyValuesCount(/* arr */) {
 
 /**
  * Returns a number of all occurrences of the specified item in an array
+ * Возвращает количество всех вхождений указанного элемента в массив.
  *
  * @param {array} arr
  * @param {any} item
@@ -387,6 +428,7 @@ function findAllOccurrences(/* arr, item */) {
 
 /**
  * Concatenates all elements from specified array into single string with ',' delimiter
+ * Объединяет все элементы из указанного массива в одну строку с разделителем ','
  *
  * @param {array} arr
  * @return {string}
@@ -404,6 +446,8 @@ function toStringList(/* arr */) {
 /**
  * Sorts the specified array by country name first and city name
  * (if countries are equal) in ascending order.
+ * Сортирует указанный массив по названию страны и названию города.
+  * (если страны равны) в порядке возрастания.
  *
  * @param {array} arr
  * @return {array}
@@ -433,6 +477,7 @@ function sortCitiesArray(/* arr */) {
 
 /**
  * Creates an identity matrix of the specified size
+ * Создает единичную матрицу указанного размера.
  *
  * @param {number} n
  * @return {array}
@@ -455,6 +500,7 @@ function getIdentityMatrix(/* n */) {
 
 /**
  * Creates an array of integers from the specified start to end (inclusive)
+ * Создает массив целых чисел от указанного начала до конца (включительно).
  *
  * @param {number} start
  * @param {number} end
@@ -472,6 +518,7 @@ function getIntervalArray(/* start, end */) {
 
 /**
  * Returns array containing only unique values from the specified array.
+ * Возвращает массив, содержащий только уникальные значения из указанного массива.
  *
  * @param {array} arr
  * @return {array}
@@ -489,6 +536,9 @@ function distinct(/* arr */) {
  * Groups elements of the specified array by key.
  * Returns multimap of keys extracted from array elements via keySelector callback
  * and values extracted via valueSelector callback.
+ * Группирует элементы указанного массива по ключу.
+  * Возвращает мультикарту ключей, извлеченных из элементов массива с помощью обратного вызова keySelector.
+  * и значения, извлеченные с помощью обратного вызова valueSelector.
  * See: https://en.wikipedia.org/wiki/Multimap
  *
  * @param {array} array
@@ -523,6 +573,8 @@ function group(/* array, keySelector, valueSelector */) {
 /**
  * Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
+ * Проецирует каждый элемент указанного массива в последовательность
+  * и объединяет полученные последовательности в один массив.
  *
  * @param {array} arr
  * @param {Function} childrenSelector, a transform function to apply to each element
@@ -540,6 +592,7 @@ function selectMany(/* arr, childrenSelector */) {
 
 /**
  * Returns an element from the multidimensional array by the specified indexes.
+ * Возвращает элемент из многомерного массива по указанным индексам.
  *
  * @param {array} arr
  * @param {array} indexes
@@ -559,6 +612,10 @@ function getElementByIndexes(/* arr, indexes */) {
  * Swaps the head and tail of the specified array:
  * the head (first half) of array move to the end, the tail (last half) move to the start.
  * The middle element (if exists) leave on the same position.
+ * Меняет местами начало и конец указанного массива:
+  * голова (первая половина) массива перемещается в конец, хвост (последняя половина) перемещается в начало.
+  * Средний элемент (если существует) оставьте на том же месте.
+  *
  *
  *
  * @param {array} arr

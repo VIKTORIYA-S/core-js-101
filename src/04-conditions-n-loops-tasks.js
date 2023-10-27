@@ -14,6 +14,11 @@
  * 2) but if number multiples of three return 'Fizz'
  * 3) for the multiples of five return 'Buzz'
  * 4) for numbers which are multiples of both three and five return 'FizzBuzz'
+ * Возвращает «Fizz», «Buzz» или исходный номер, используя следующие правила:
+  * 1) вернуть исходный номер
+  * 2) но если число кратно трем, возвращается «Fizz»
+  * 3) для кратных пяти возвратите «Buzz»
+  * 4) для чисел, кратных трем и пяти, возвращается «FizzBuzz».
  *
  * @param {number} num
  * @return {any}
@@ -35,6 +40,7 @@ function getFizzBuzz(/* num */) {
 
 /**
  * Returns the factorial of the specified integer n.
+ * Возвращает факториал указанного целого числа n.
  *
  * @param {number} n
  * @return {number}
@@ -51,6 +57,7 @@ function getFactorial(/* n */) {
 
 /**
  * Returns the sum of integer numbers between n1 and n2 (inclusive).
+ * Возвращает сумму целых чисел от n1 до n2 (включительно).
  *
  * @param {number} n1
  * @param {number} n2
@@ -69,6 +76,8 @@ function getSumBetweenNumbers(/* n1, n2 */) {
 /**
  * Returns true, if a triangle can be built with the specified sides a, b, c
  * and false in any other ways.
+ * Возвращает true, если треугольник можно построить с указанными сторонами a, b, c
+  * и false в любых других случаях.
  *
  * @param {number} a
  * @param {number} b
@@ -89,6 +98,8 @@ function isTriangle(/* a, b, c */) {
 /**
  * Returns true, if two specified axis-aligned rectangles overlap, otherwise false.
  * Each rectangle representing by object
+ * Возвращает true, если два заданных прямоугольника, выровненных по осям, перекрываются, в противном случае — false.
+  * Каждый прямоугольник, представляющий объект
  *  {
  *     top: 5,
  *     left: 5,
@@ -126,6 +137,8 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
 /**
  * Returns true, if point lies inside the circle, otherwise false.
  * Circle is an object of
+ * Возвращает true, если точка находится внутри круга, в противном случае — false.
+  * Круг является объектом
  *  {
  *     center: {
  *       x: 5,
@@ -156,6 +169,8 @@ function isInsideCircle(/* circle, point */) {
 
 /**
  * Returns the first non repeated char in the specified strings otherwise returns null.
+ * Возвращает первый неповторяющийся символ в указанных строках, в противном случае возвращается значение NULL.
+  *
  *
  * @param {string} str
  * @return {string}
@@ -173,9 +188,12 @@ function findFirstSingleChar(/* str */) {
 /**
  * Returns the string representation of math interval,
  * specified by two points and include / exclude flags.
+ * Возвращает строковое представление математического интервала,
+  * указывается двумя точками и флагами включения/исключения.
  * See the details: https://en.wikipedia.org/wiki/Interval_(mathematics)
  *
  * Please take attention, that the smaller number should be the first in the notation
+ * Обратите внимание, что в обозначениях первым должно стоять меньшее число.
  *
  * @param {number} a
  * @param {number} b
@@ -199,6 +217,7 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
 
 /**
  * Reverse the specified string (put all chars in reverse order)
+ * +Перевернуть указанную строку (поместить все символы в обратном порядке)
  *
  * @param {string} str
  * @return {string}
@@ -209,13 +228,16 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
-}
+  function reverseString(str) {
+    let res = str.split('').reverse().join('');
+   return res;
+  }
+
 
 
 /**
  * Reverse the specified integer number (put all digits in reverse order)
+ * +Перевернуть указанное целое число (поставить все цифры в обратном порядке)
  *
  * @param {number} num
  * @return {number}
@@ -226,14 +248,16 @@ function reverseString(/* str */) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
-  throw new Error('Not implemented');
+function reverseInteger(num) {
+  num = num + "";
+  return num.split("").reverse().join("");
 }
-
 
 /**
  * Validates the CCN (credit card number) and return true if CCN is valid
  * and false otherwise.
+ * Проверяет CCN (номер кредитной карты) и возвращает true, если CCN действителен.
+  * и false в противном случае.
  *
  * See algorithm here : https://en.wikipedia.org/wiki/Luhn_algorithm
  *
@@ -251,14 +275,17 @@ function reverseInteger(/* num */) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function isCreditCardNumber(/* ccn */) {
-  throw new Error('Not implemented');
+function isCreditCardNumber(ccn) {
+  
 }
 
 /**
  * Returns the digital root of integer:
  *   step1 : find sum of all digits
  *   step2 : if sum > 9 then goto step1 otherwise return the sum
+ * Возвращает цифровой корень целого числа:
+  * шаг 1: найти сумму всех цифр
+  * шаг 2: если сумма > 9, перейдите к шагу 1, в противном случае верните сумму.
  *
  * @param {number} n
  * @return {number}
@@ -270,7 +297,7 @@ function isCreditCardNumber(/* ccn */) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+  
 }
 
 
@@ -279,6 +306,10 @@ function getDigitalRoot(/* num */) {
  * Balanced means that is, whether it consists entirely of pairs of opening/closing brackets
  * (in that order), none of which mis-nest.
  * Brackets include [],(),{},<>
+ * Возвращает true, если указанная строка содержит сбалансированные скобки, и false в противном случае.
+  * Сбалансированный означает, состоит ли он полностью из пар открывающих/закрывающих скобок.
+  * (именно в таком порядке), ни один из которых не вложен неправильно.
+  * Скобки включают [],(),{},<>
  *
  * @param {string} str
  * @return {boolean}

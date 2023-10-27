@@ -31,6 +31,7 @@ function concatenateStrings(value1, value2) {
 
 /**
  * 2+Returns the length of given string.
+ * Возвращает длину заданной строки.
  *
  * @param {string} value
  * @return {number}
